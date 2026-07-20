@@ -72,20 +72,26 @@ def get_query(name:str,depart:str,cgpa:float):
 	return result
 
 
-#pydantic: -validation tool which python automatically handles the request and response
+#pydantic
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, EmailStr
+
 class Student(BaseModel):
-	name:str
-	rollno:int
-	department:str
-	cgpa:float
+    name: str = Field(..., min_length=3, max_length=50)
+    rollno: int
+    department: str
+    cgpa: float = Field(..., gt=4)
+    email: EmailStr
 
-students  = []
+students = []
 
 @app.post("/student/add")
-def studets_model(student : Student):
+def student_model(student: Student):
 
-	students.append(student)
+    students.append(student)
+    return {"message": "Student Added :", "student": student, "all_students": students}
 
-	return f"Student Added : {students}"
+
+#Field : apply explicit valid
+#name: must be greater than 3 char max 50
+#age : 

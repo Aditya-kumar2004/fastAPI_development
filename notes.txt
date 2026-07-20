@@ -1,0 +1,35 @@
+# to run the file coomannd iss :- python -m uvicorn (filename):app --reload
+
+# Pydantic : validation tool which python automatically handles the request and response
+
+## Recent changes made to project
+
+- Fixed `/getdata` route in `main.py` (renamed handler to `get_data` and used Python booleans).
+- Added 6 sample students to `students2` used by `/students` endpoint.
+- Implemented filtering in `/students` to match `name` (substring, case-insensitive), `depart` (case-insensitive exact), and `cgpa` (>=).
+
+## Useful commands
+
+- Activate virtualenv (cmd):
+```bat
+myvenv\Scripts\activate.bat
+```
+
+- Activate virtualenv (PowerShell):
+```powershell
+.\myvenv\Scripts\Activate.ps1
+```
+
+- Install dependencies:
+```bash
+pip install fastapi uvicorn[standard]
+```
+
+- Run the app with reload:
+```bash
+uvicorn main:app --reload
+```
+
+- Test `/students` endpoint example:
+http://127.0.0.1:8000/students?name=Aditya&depart=CSE&cgpa=5.5
+

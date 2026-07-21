@@ -1,5 +1,5 @@
 # to run the file coomannd iss :- python -m uvicorn (filename):app --reload
-
+                                :- python -m uvicorn main:app --reload
 # Pydantic : validation tool which python automatically handles the request and response
 
 ## Recent changes made to project
@@ -41,3 +41,21 @@ http://127.0.0.1:8000/students?name=Aditya&depart=CSE&cgpa=5.5
                                                                                         #design a chess game board 
                                                                                         #desgin parking lot 
             
+MONGODB
+
+mongoDB:- It is a physical conatiner for coollection(known as entity in SQL)
+coollection:- Group  of document and similar to RDBMStable. A colection exist in one databse only. It doest enforce schema
+document:- it is a record that store inside collection and its similar to ows in the table(rdbms) and it is a key-value pair of data
+field :- It is a key-value pair of data(known as column in SQL)
+
+**) Incoming data will in json format
+
+Each databse get it own set of files on the filesystem(on the hardisk)::
+1.db-1.ns: a ns(namesspace) file that stores metadata about the collections in that database
+2.db-*.0 : data files for each collection(data in chunk )
+3.db-*.ns  : index files for each collection (in most cases )
+4.db-last-rs: rollback segment (only for replication)
+
+
+#to intergrate a mongo db we have to install  this library :- pip install motor
+# to load this env file we havee to  install this : - pip install python-dotenv

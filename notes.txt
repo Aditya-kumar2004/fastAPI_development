@@ -33,3 +33,11 @@ uvicorn main:app --reload
 - Test `/students` endpoint example:
 http://127.0.0.1:8000/students?name=Aditya&depart=CSE&cgpa=5.5
 
+
+                                                                            ##########SYSTEM DESIGN
+                                                                                        #solid princple 
+                                                                                        #design paaterns:-factory,singleton,builder,observer,proxy,strategy,
+                                                                                        #core LLD architecture
+                                                                                        #design a chess game board 
+                                                                                        #desgin parking lot 
+            

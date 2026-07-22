@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, Field, EmailStr
 
 class Student(BaseModel):
@@ -16,3 +17,24 @@ class Student_Response(BaseModel):
     rollno: int
     department: str
     email: str
+
+
+class Student_update(BaseModel):
+    name:Optional[str] = None
+    rollno:Optional[int] = None
+    department:Optional[str] = None
+    cgpa:Optional[float] = None
+    email:Optional[EmailStr] = None
+    phone:Optional[str] = None
+    aadhar:Optional[str] = None
+    pancard:Optional[str] = None
+    password:Optional[str] = None
+
+
+class Student_Filter(BaseModel):
+    name:Optional[str] = None
+    rollno:Optional[int] = None
+    department:Optional[str] = None
+    min_cgpa:Optional[float] = None
+    max_cgpa:Optional[float] = None
+    email:Optional[EmailStr] = None

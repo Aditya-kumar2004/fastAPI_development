@@ -1,0 +1,6 @@
+[project]
+search_paths = ["myvenv/Lib/site-packages"]
+
+[rules]
+missing-module-source = "ignore"
+unresolved-import = "ignore"
